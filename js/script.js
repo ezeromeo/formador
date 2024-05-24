@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "Diego Pérez", "María González", "María González"
     ];
     let tbodyContent = nombres.map((nombre, index) => {
-        const entradaIcon = (index <= 7 || (index >= 10 && index <= 12)) ? 'OK.svg' : 'INCIDENCIA.svg';
-        const salidaIcon = [0, 2, 5, 6, 7, 8, 9, 11, 12, 13, 14].includes(index) ? 'PENDIENTE.svg' : 'OK.svg';
+        const entradaIcon = (index <= 7 || (index >= 10 && index <= 12)) ? 'Ok.svg' : 'INCIDENCIA.svg';
+        const salidaIcon = [0, 2, 5, 6, 7, 8, 9, 11, 12, 13, 14].includes(index) ? 'PENDIENTE.svg' : 'Ok.svg';
         const exclamation = index === 9 ? '<div class="d-flex align-items-center justify-content-center"><img class="me-2" src="assets/img/exclamation-warning.svg" alt=""><img src="assets/img/chat-dots.svg" alt=""></div>' : '';
 
         return `
