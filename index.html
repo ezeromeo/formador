@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formador</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="body">
+        <div class="header d-flex align-items-center justify-content-around">
+            <div class="textoIcono d-flex align-items-center justify-content-center">
+                <div class="circle">
+                    <img src="assets/img/Layer_1.svg" alt="">
+                </div>
+                <p>DIEGO PÉREZ</p>
+            </div>
+            <select name="" id="" class="form-select">
+                <option value="Hoy" selected>Hoy</option>
+            </select>
+        </div>
+        <div class="tablaPanel">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">
+                        <div class="qrTitulo d-flex align-items-center justify-content-center flex-column">
+                            <img src="assets/img/qr-code.svg" alt="">
+                            <p class="mb-0">ENTRADA</p>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="qrTitulo d-flex align-items-center justify-content-center flex-column">
+                            <img src="assets/img/qr-code.svg" alt="">
+                            <p class="mb-0">SALIDA</p>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="excDiv ">
+                            <img src="assets/img/exclamation.svg" alt="">
+                        </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <footer>
+        <div class="footerIcons d-flex align-items-center justify-content-around pt-3">
+            <div class="calendar d-flex align-items-center justify-content-center flex-column">
+                <img src="assets/img/calendar.svg" alt="">
+                <p>Agenda</p>
+            </div>
+            <div id="activarProyectarQr" class="proyectarQr d-flex align-items-center justify-content-center flex-column">
+                <img src="assets/img/proyectar.svg" alt="Proyectar QR">
+                <p>Proyectar QR</p>
+            </div>            
+            <div id="triggerNuevoAlumno" class="nuevoAlumno d-flex align-items-center justify-content-center flex-column">
+                <img src="assets/img/nuevoAlumno.svg" alt="">
+                <p>Nuevo Alumno</p>
+            </div>
+            <div id="activarChatbot" class="chatbot d-flex align-items-center justify-content-center flex-column">
+                <img src="assets/img/chatbot.svg" alt="">
+                <p>ChatBot</p>
+            </div>
+            <div class="bellIcon d-flex align-items-center justify-content-center flex-column mb-3" id="disconnect">
+                <img src="assets/img/bellIcon.svg" alt="">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+<div class="modal fade" id="nuevoAlumno" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center nuevoAlumnoModalTitle">Nuevo Alumno</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">NIF</label>
+                  </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Primer apellido</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Segundo apellido</label>
+                </div>
+            </div>
+            <div class="modal-footer acepto d-flex align-items-center justify-content-center flex-column">
+                <button class="btn d-flex align-items-center justify-content-center">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="proyectaQrModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center proyectaQrModalTitle">Proyecta esta QR desde el móvil:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center flex-column">
+                <div class="qrCode d-flex align-items-center justify-content-center">
+                    <img src="assets/img/qrRedirect.png" alt="">
+                </div>
+                <div class="tituloSubQr text-center">
+                    <p>O bien, introduce esta dirección en el navegador Web donde estés proyectando:</p>
+                </div>
+                <div class="urlQr text-center">
+                    <p>https://efundae.Fundae.es/(tuNIF)</p>
+                </div>
+                <div class="textoQr text-center">
+                    <p>Debes cambiar (tuNIF) por tu NIF real (ejemplo: 52984606N, <a class="urlTextoQr">https://efundae.Fundae.es/52984606N)</a>
+                        Al acceder, el sistema solicitará tu usuario y password (el mismo que la app móvil), y la app móvil te pedirá activar el QR</p>
+                </div>
+            </div>
+            <div class="modal-footer acepto d-flex align-items-center justify-content-center flex-column">
+                <button class="btn d-flex align-items-center justify-content-center">
+                    <img class="me-3" src="assets/img/proyectar.svg" alt="">
+                    Activar QR
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="chatbotModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Actualmente el ChatBot no está activo en el modo demo</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
